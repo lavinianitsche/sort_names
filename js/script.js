@@ -1,3 +1,5 @@
+// codigo incompleto
+
 let nomes = [];
 
 function adicionarNome() {
@@ -28,7 +30,7 @@ function adicionarNome() {
 function sortearNome() {
     let nome = document.getElementById("inputNome").value;
     let resultado;
-    
+    let resultado = amigosRestantes.splice(Math.floor(Math.random() * amigosRestantes.length), 1)[0];
 
 }
 
