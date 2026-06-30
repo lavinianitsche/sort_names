@@ -24,15 +24,16 @@ function adicionarNome() {
     nome.value = "";
 
     // adicionar na lista de modo correto
-
-
     
-
+    
+    
+    
     console.log("Chegou onde eu queria");
-
+    
     let participantes = document.getElementById('listaDeParticipantes');
     
     console.log(participantes);
+    // criar li e adicionar nomes
     
     participantes.value = "";
     // 5. Criar um laço de repetição (for) para percorrer todos os elementos do array 'listaNomes':
