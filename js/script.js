@@ -4,52 +4,74 @@ let nomes = [];
 
 function adicionarNome() {
     const nome = document.getElementById('inputNome');
-    let name = nome.value.toLowerCase().trim();
-    name = name.replaceAll(" ", "");
+    let name = nome.value.trim();
     
     if (name === "" || name.length < 3) {
-        alert("nome precisa conter mais que tres caracteres");
+        alert("erro: nome precisa conter mais que tres caracteres");
         nome.value = "";
-        
+        return;       
+    } 
+    
+    if (nomes.includes(name)) {
+        alert("erro: esse nome ja foi cadastrado");
         return;
-        
-    } else if (nomes.includes(name)) {
-        alert("esse nome ja foi cadastrado");
-        return;
-    } else {
-        nomes.push(name);
-        // alert("nome cadastrado com sucesso");
-        console.log(`nome: ${name}`);
-        nome.value = "";
-        lista();
+    } 
+    
+    nomes.push(name);
+    console.log(nomes);
+    alert("nome cadastrado com sucesso");
+    console.log(`nome: ${name}`);
+    nome.value = "";
 
-        return;
-    }
+    // adicionar na lista de modo correto
+
+
+    
+
+    console.log("Chegou onde eu queria");
+
+    let participantes = document.getElementById('listaDeParticipantes');
+    
+    console.log(participantes);
+    
+    participantes.value = "";
+    // 5. Criar um laço de repetição (for) para percorrer todos os elementos do array 'listaNomes':
+    // -> A cada repetição, concatenar uma nova tag <li> contendo o nome atual dentro da lista HTML
+
 }
 
 function sortearNome() {
+
+    if (nomes.length > 0) {
+        alert("teste");
+    } else {
+        alert("teste 2");
+    }
+
+
+
     let nome = document.getElementById("inputNome").value;
     let resultado;
-    let resultado = amigosRestantes.splice(Math.floor(Math.random() * amigosRestantes.length), 1)[0];
+    resultado = nomes.splice(Math.floor(Math.random() * nomes.length), 1)[0];
 
 }
 
-function lista() {
-    const lista = document.getElementById("listaDeParticipantes");
-    lista.innerHTML = "";
+// function lista() {
+//     const lista = document.getElementById("listaDeParticipantes");
+//     lista.innerHTML = "";
 
-    if (nomes.length === 0) {
-        lista.innerHTML = '<div style="text-align: center; color: #999;">Nenhum ingrediente cadastrado</div>';
-        return;
-    }
+//     if (nomes.length === 0) {
+//         lista.innerHTML = '<div style="text-align: center; color: #999;">Nenhum ingrediente cadastrado</div>';
+//         return;
+//     }
     
-    nomes.forEach((nome, indice) => {
-        const item = document.createElement('div');
-        item.innerHTML = `<span>${indice}. ${nome}</span>`;
-        lista.appendChild(item);
-    })
+//     nomes.forEach((nome, indice) => {
+//         const item = document.createElement('div');
+//         item.innerHTML = `<span>${indice}. ${nome}</span>`;
+//         lista.appendChild(item);
+//     })
 
-}
+// }
 
 // function sortear() {
 
