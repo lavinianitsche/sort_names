@@ -29,19 +29,30 @@ function adicionarNome() {
 
     }
 
+    console.log(nomes);
     nome.focus();
 }
 
 function sortearNome() {
 
     let resultado;
+
+    let num = Math.floor(Math.random() * nomes.length, 1);
+    
+    let numeros_sorteados = [];
+    numeros_sorteados.push(num);
+
     resultado = nomes.splice(Math.floor(Math.random() * nomes.length), 1)[0];
+
+    console.log(resultado);
     
     if (nomes.length < 0) {
         alert("erro: lista está vazia");
         return;
 
     } else {
+        // document.getElementById('txtSorteado').innerHTML = "resultado: " + resultado + " 🎉";
         document.getElementById('txtSorteado').innerHTML = "resultado: " + resultado + " 🎉";
     }
+
 }
