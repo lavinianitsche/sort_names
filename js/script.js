@@ -29,8 +29,7 @@ function adicionarNome() {
 
     }
 
-    console.log(nomes);
-    
+    nome.focus();
 }
 
 function sortearNome() {
@@ -38,14 +37,11 @@ function sortearNome() {
     let resultado;
     resultado = nomes.splice(Math.floor(Math.random() * nomes.length), 1)[0];
     
-
     if (nomes.length < 0) {
-        alert("lista vazia");
+        alert("erro: lista está vazia");
         return;
 
     } else {
         document.getElementById('txtSorteado').innerHTML = "resultado: " + resultado + " 🎉";
     }
-
-
 }
