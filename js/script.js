@@ -16,7 +16,7 @@ function adicionarNome() {
     } 
     
     nomes.push(name);
-    console.log(nomes);
+    // console.log(nomes);
     console.log(`nome: ${name}`);
     nome.value = "";
     
@@ -29,30 +29,23 @@ function adicionarNome() {
 
     }
 
-    console.log(nomes);
+    // console.log(nomes);
     nome.focus();
 }
 
 function sortearNome() {
 
-    let resultado;
+    if (nomes.length === 0) {
+        document.getElementById('txtSorteado').innerHTML = `todos foram sorteados`;
+        console.log(`todos foram sorteados`);
 
-    let num = Math.floor(Math.random() * nomes.length, 1);
-    
-    let numeros_sorteados = [];
-    numeros_sorteados.push(num);
+        return;
+    }
+
+    let resultado;
 
     resultado = nomes.splice(Math.floor(Math.random() * nomes.length), 1)[0];
 
-    console.log(resultado);
-    
-    if (nomes.length < 0) {
-        alert("erro: lista está vazia");
-        return;
-
-    } else {
-        // document.getElementById('txtSorteado').innerHTML = "resultado: " + resultado + " 🎉";
-        document.getElementById('txtSorteado').innerHTML = "resultado: " + resultado + " 🎉";
-    }
-
+    document.getElementById('txtSorteado').innerHTML = `resultado: ${resultado} 🎉`;
+    console.log(`nome sorteado: ${resultado}`);
 }
